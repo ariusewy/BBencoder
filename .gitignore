@@ -1,0 +1,15 @@
+# Author: ywangmu from HKUST
+
+# Ignore datasets and model artifacts
+dataset/**
+!dataset/.gitkeep
+
+models/**
+!models/.gitkeep
+
+models_supervised/**
+!models_supervised/.gitkeep
+
+# Optional: common large artifacts inside these dirs (kept generic by dir rules above)
+# (Do not add global *.pt/*.pkl ignores to avoid hiding source assets outside these dirs.)
+

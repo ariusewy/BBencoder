@@ -1,0 +1,170 @@
+
+================================================================================
+                    BBencoder - 完整训练
+               RISC-V Testcase Novelty Detection
+================================================================================
+
+开始时间: 2025-10-15 23:31:34
+
+--------------------------------------------------------------------------------
+训练配置
+--------------------------------------------------------------------------------
+
+数据配置:
+  数据集路径: /home/ywangmu/Proj/BBencoder/dataset/final_training_data.pkl
+  样本数量: 20000
+  最大序列长度: 1600 tokens
+  数据增强倍数: 1x
+
+训练配置:
+  训练轮次: 100
+  批大小: 64
+  学习率: 0.001
+  设备: cuda
+
+模型配置:
+  Embedding维度: 192
+  LSTM隐藏维度: 384
+  输出维度: 96
+
+保存配置:
+  输出目录: /home/ywangmu/Proj/BBencoder/models
+  检查点频率: 每10个epoch
+  随机种子: 42
+
+验证配置:
+  验证集比例: 20.0%
+  早停耐心值: 20 epochs
+--------------------------------------------------------------------------------
+
+[1/4] 加载数据集...
+  路径: /home/ywangmu/Proj/BBencoder/dataset/final_training_data.pkl
+  ✓ 加载完成: 50,749 总样本
+  → 使用: 20,000 样本
+  类型分布:
+    - rocket: 10,126 (50.6%)
+    - rlrtl:  9,874 (49.4%)
+  加载时间: 1.3秒
+
+[2/4] 检查设备...
+  ✓ 使用GPU: NVIDIA A100-PCIE-40GB
+  显存: 39.4 GB
+
+[3/4] 估算训练时间...
+  训练样本对: ~40,000
+  每轮步数: ~625
+  总训练步数: ~62,500
+  预计训练时间: ~260分钟 (4.3小时)
+
+[4/4] 开始训练...
+================================================================================
+Using device: cuda
+
+[1/5] Creating tokenizer...
+  Vocabulary size: 342
+  Tokenizer saved to /home/ywangmu/Proj/BBencoder/models/tokenizer.pkl
+
+[2/5] Creating training and validation datasets...
+  Dataset split:
+    Training: 16,000 testcases (80.0%)
+    Validation: 4,000 testcases (20.0%)
+  Training pairs: 32,000
+    Positive pairs: ~16000
+    Negative pairs: ~16000
+  Validation pairs: 8,000
+
+[3/5] Creating model...
+  Model parameters: 6,014,305 (~6.01M)
+
+[4/5] Training with validation...
+================================================================================
+Epoch   1/100 | Train Loss: 0.0663 | Val Loss: 0.0439 | Time: 402.6s | LR: 0.001000
+  → Best model saved (val_loss: 0.0439)
+Epoch   2/100 | Train Loss: 0.0462 | Val Loss: 0.0397 | Time: 398.3s | LR: 0.000999
+  → Best model saved (val_loss: 0.0397)
+Epoch   3/100 | Train Loss: 0.0377 | Val Loss: 0.0310 | Time: 416.5s | LR: 0.000998
+  → Best model saved (val_loss: 0.0310)
+Epoch   4/100 | Train Loss: 0.0309 | Val Loss: 0.0263 | Time: 409.1s | LR: 0.000996
+  → Best model saved (val_loss: 0.0263)
+Epoch   5/100 | Train Loss: 0.0273 | Val Loss: 0.0230 | Time: 393.8s | LR: 0.000994
+  → Best model saved (val_loss: 0.0230)
+Epoch   6/100 | Train Loss: 0.0258 | Val Loss: 0.0202 | Time: 360.2s | LR: 0.000992
+  → Best model saved (val_loss: 0.0202)
+Epoch   7/100 | Train Loss: 0.0226 | Val Loss: 0.0192 | Time: 308.6s | LR: 0.000989
+  → Best model saved (val_loss: 0.0192)
+Epoch   8/100 | Train Loss: 0.0206 | Val Loss: 0.0186 | Time: 307.4s | LR: 0.000986
+  → Best model saved (val_loss: 0.0186)
+Epoch   9/100 | Train Loss: 0.0204 | Val Loss: 0.0193 | Time: 306.5s | LR: 0.000982
+Epoch  10/100 | Train Loss: 0.0204 | Val Loss: 0.0174 | Time: 306.2s | LR: 0.000978
+  → Best model saved (val_loss: 0.0174)
+Epoch  11/100 | Train Loss: 0.0188 | Val Loss: 0.0157 | Time: 307.9s | LR: 0.000973
+  → Best model saved (val_loss: 0.0157)
+Epoch  12/100 | Train Loss: 0.0179 | Val Loss: 0.0159 | Time: 308.2s | LR: 0.000968
+Epoch  13/100 | Train Loss: 0.0180 | Val Loss: 0.0182 | Time: 310.4s | LR: 0.000963
+Epoch  14/100 | Train Loss: 0.0179 | Val Loss: 0.0161 | Time: 308.4s | LR: 0.000957
+Epoch  15/100 | Train Loss: 0.0175 | Val Loss: 0.0160 | Time: 306.6s | LR: 0.000951
+Epoch  16/100 | Train Loss: 0.0165 | Val Loss: 0.0189 | Time: 306.7s | LR: 0.000944
+Epoch  17/100 | Train Loss: 0.0175 | Val Loss: 0.0166 | Time: 306.8s | LR: 0.000937
+Epoch  18/100 | Train Loss: 0.0169 | Val Loss: 0.0155 | Time: 305.5s | LR: 0.000930
+  → Best model saved (val_loss: 0.0155)
+Epoch  19/100 | Train Loss: 0.0158 | Val Loss: 0.0147 | Time: 306.7s | LR: 0.000922
+  → Best model saved (val_loss: 0.0147)
+Epoch  20/100 | Train Loss: 0.0155 | Val Loss: 0.0149 | Time: 306.8s | LR: 0.000914
+Epoch  21/100 | Train Loss: 0.0151 | Val Loss: 0.0149 | Time: 307.8s | LR: 0.000906
+Epoch  22/100 | Train Loss: 0.0156 | Val Loss: 0.0150 | Time: 305.6s | LR: 0.000897
+Epoch  23/100 | Train Loss: 0.0143 | Val Loss: 0.0140 | Time: 308.3s | LR: 0.000888
+  → Best model saved (val_loss: 0.0140)
+Epoch  24/100 | Train Loss: 0.0142 | Val Loss: 0.0128 | Time: 309.2s | LR: 0.000878
+  → Best model saved (val_loss: 0.0128)
+Epoch  25/100 | Train Loss: 0.0139 | Val Loss: 0.0163 | Time: 307.4s | LR: 0.000868
+Epoch  26/100 | Train Loss: 0.0144 | Val Loss: 0.0134 | Time: 305.0s | LR: 0.000858
+Epoch  27/100 | Train Loss: 0.0137 | Val Loss: 0.0134 | Time: 305.9s | LR: 0.000848
+Epoch  28/100 | Train Loss: 0.0133 | Val Loss: 0.0131 | Time: 306.2s | LR: 0.000837
+Epoch  29/100 | Train Loss: 0.0128 | Val Loss: 0.0136 | Time: 305.8s | LR: 0.000826
+Epoch  30/100 | Train Loss: 0.0128 | Val Loss: 0.0138 | Time: 304.8s | LR: 0.000815
+Epoch  31/100 | Train Loss: 0.0119 | Val Loss: 0.0135 | Time: 305.5s | LR: 0.000803
+Epoch  32/100 | Train Loss: 0.0143 | Val Loss: 0.0126 | Time: 308.7s | LR: 0.000791
+  → Best model saved (val_loss: 0.0126)
+Epoch  33/100 | Train Loss: 0.0121 | Val Loss: 0.0140 | Time: 305.6s | LR: 0.000779
+Epoch  34/100 | Train Loss: 0.0118 | Val Loss: 0.0126 | Time: 304.9s | LR: 0.000767
+Epoch  35/100 | Train Loss: 0.0113 | Val Loss: 0.0124 | Time: 308.9s | LR: 0.000754
+  → Best model saved (val_loss: 0.0124)
+Epoch  36/100 | Train Loss: 0.0107 | Val Loss: 0.0126 | Time: 308.0s | LR: 0.000742
+Epoch  37/100 | Train Loss: 0.0104 | Val Loss: 0.0126 | Time: 308.4s | LR: 0.000729
+Epoch  38/100 | Train Loss: 0.0102 | Val Loss: 0.0137 | Time: 303.8s | LR: 0.000716
+Epoch  39/100 | Train Loss: 0.0099 | Val Loss: 0.0132 | Time: 310.9s | LR: 0.000702
+Epoch  40/100 | Train Loss: 0.0100 | Val Loss: 0.0127 | Time: 307.8s | LR: 0.000689
+Epoch  41/100 | Train Loss: 0.0095 | Val Loss: 0.0128 | Time: 307.4s | LR: 0.000676
+Epoch  42/100 | Train Loss: 0.0096 | Val Loss: 0.0125 | Time: 304.2s | LR: 0.000662
+Epoch  43/100 | Train Loss: 0.0089 | Val Loss: 0.0130 | Time: 306.7s | LR: 0.000648
+Epoch  44/100 | Train Loss: 0.0089 | Val Loss: 0.0125 | Time: 305.8s | LR: 0.000634
+Epoch  45/100 | Train Loss: 0.0086 | Val Loss: 0.0132 | Time: 307.0s | LR: 0.000620
+Epoch  46/100 | Train Loss: 0.0087 | Val Loss: 0.0129 | Time: 310.3s | LR: 0.000606
+Epoch  47/100 | Train Loss: 0.0078 | Val Loss: 0.0125 | Time: 309.3s | LR: 0.000592
+Epoch  48/100 | Train Loss: 0.0075 | Val Loss: 0.0141 | Time: 310.7s | LR: 0.000578
+Epoch  49/100 | Train Loss: 0.0076 | Val Loss: 0.0128 | Time: 308.4s | LR: 0.000564
+Epoch  50/100 | Train Loss: 0.0074 | Val Loss: 0.0125 | Time: 305.6s | LR: 0.000550
+Epoch  51/100 | Train Loss: 0.0074 | Val Loss: 0.0130 | Time: 304.7s | LR: 0.000536
+Epoch  52/100 | Train Loss: 0.0070 | Val Loss: 0.0127 | Time: 305.2s | LR: 0.000522
+Epoch  53/100 | Train Loss: 0.0070 | Val Loss: 0.0131 | Time: 307.7s | LR: 0.000508
+Epoch  54/100 | Train Loss: 0.0065 | Val Loss: 0.0133 | Time: 305.1s | LR: 0.000494
+Epoch  55/100 | Train Loss: 0.0071 | Val Loss: 0.0135 | Time: 307.9s | LR: 0.000480
+  → Early stopping triggered (patience: 20)
+
+[5/5] Training completed!
+  Best loss: 0.0113
+  Models saved to: /home/ywangmu/Proj/BBencoder/models/
+
+================================================================================
+训练完成！
+================================================================================
+
+总训练时间: 4.88小时 (292.8分钟)
+平均每轮: 175.7秒
+
+模型已保存到: /home/ywangmu/Proj/BBencoder/models/
+  - best_model.pt: 最佳模型
+  - tokenizer.pkl: Tokenizer
+  - checkpoint_epoch_*.pt: 训练检查点
+
+结束时间: 2025-10-16 04:24:26

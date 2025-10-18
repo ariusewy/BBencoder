@@ -1,0 +1,103 @@
+/home/ywangmu/anaconda3/envs/nanogpt/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:192: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn(
+
+================================================================================
+                    BBencoder - 完整训练
+               RISC-V Testcase Novelty Detection
+================================================================================
+
+开始时间: 2025-10-15 18:27:02
+
+--------------------------------------------------------------------------------
+训练配置
+--------------------------------------------------------------------------------
+
+数据配置:
+  数据集路径: /home/ywangmu/Proj/BBencoder/dataset/final_training_data.pkl
+  样本数量: 20000
+  最大序列长度: 1600 tokens
+  数据增强倍数: 1x
+
+训练配置:
+  训练轮次: 52
+  批大小: 64
+  学习率: 0.001
+  设备: cuda
+
+模型配置:
+  Embedding维度: 192
+  LSTM隐藏维度: 384
+  输出维度: 96
+
+保存配置:
+  输出目录: /home/ywangmu/Proj/BBencoder/models
+  检查点频率: 每10个epoch
+  随机种子: 42
+
+恢复训练:
+  从检查点恢复: models/best_model.pt
+--------------------------------------------------------------------------------
+
+[1/4] 加载数据集...
+  路径: /home/ywangmu/Proj/BBencoder/dataset/final_training_data.pkl
+  ✓ 加载完成: 50,749 总样本
+  → 使用: 20,000 样本
+  类型分布:
+    - rocket: 10,126 (50.6%)
+    - rlrtl:  9,874 (49.4%)
+  加载时间: 1.5秒
+
+[2/4] 检查设备...
+  ✓ 使用GPU: NVIDIA A100-PCIE-40GB
+  显存: 39.4 GB
+
+[3/4] 估算训练时间...
+  训练样本对: ~40,000
+  每轮步数: ~625
+  总训练步数: ~32,500
+  预计训练时间: ~135分钟 (2.3小时)
+
+[4/4] 开始训练...
+================================================================================
+Using device: cuda
+
+[Resume] Loading checkpoint from: models/best_model.pt
+  → Resuming from epoch 50
+  → Previous best loss: 0.0218
+
+[1/5] Loading existing tokenizer...
+  Vocabulary size: 138
+
+[2/5] Creating training dataset...
+  Total training pairs: 40000
+    Positive pairs: ~20000
+    Negative pairs: ~20000
+
+[3/5] Creating model...
+  Model parameters: 5,975,137 (~5.98M)
+  → Checkpoint loaded successfully
+  → Continuing from epoch 51/52
+  → Current best loss: 0.0218
+
+[4/5] Training...
+================================================================================
+Epoch  51/52 | Loss: 0.0233 | Time: 431.8s | LR: 0.000100
+Epoch  52/52 | Loss: 0.0232 | Time: 422.1s | LR: 0.000100
+
+[5/5] Training completed!
+  Best loss: 0.0218
+  Models saved to: /home/ywangmu/Proj/BBencoder/models/
+
+================================================================================
+训练完成！
+================================================================================
+
+总训练时间: 0.27小时 (16.4分钟)
+平均每轮: 18.9秒
+
+模型已保存到: /home/ywangmu/Proj/BBencoder/models/
+  - best_model.pt: 最佳模型
+  - tokenizer.pkl: Tokenizer
+  - checkpoint_epoch_*.pt: 训练检查点
+
+结束时间: 2025-10-15 18:43:27
