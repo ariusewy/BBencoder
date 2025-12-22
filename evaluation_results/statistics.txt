@@ -1,0 +1,27 @@
+EMBEDDING-BB SIMILARITY CORRELATION EVALUATION
+================================================================================
+
+Number of pairs evaluated: 100
+
+CORRELATION STATISTICS
+--------------------------------------------------------------------------------
+Pearson correlation (Cosine Sim vs BB Sim):  0.7111
+Spearman correlation (Cosine Sim vs BB Sim): 0.6887
+P-value: 1.13e-16
+
+Pearson correlation (Distance vs BB Sim):  -0.7111
+Spearman correlation (Distance vs BB Sim): -0.6887
+
+EMBEDDING DISTANCE STATISTICS
+--------------------------------------------------------------------------------
+Mean: 0.4137
+Std:  0.1486
+Min:  0.0458
+Max:  0.6423
+
+BB SIMILARITY STATISTICS
+--------------------------------------------------------------------------------
+Mean: 1.0696
+Std:  0.8434
+Min:  0.0000
+Max:  3.5167

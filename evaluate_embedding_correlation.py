@@ -8,9 +8,9 @@ Specifically, it checks if embedding distance correlates with BB similarity scor
 
 Usage:
     python evaluate_embedding_correlation.py \
-  --model models_supervised/best_model.pt \
-  --tokenizer models_supervised/tokenizer.pkl \
-  --num-pairs 500
+  --model saved_model/best_model.pt \
+  --tokenizer saved_model/tokenizer.pkl \
+  --num-pairs 100
 """
 
 import argparse

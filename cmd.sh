@@ -1,0 +1,1 @@
+PRECOMPUTED_PAIRS=dataset/supervised_pairs.pkl MLM_EPOCHS=20 SUP_EPOCHS=20 MLM_SAMPLES=50000 SUP_SAMPLES=25000 bash train.sh gpt2-small two-stage

@@ -238,7 +238,13 @@ class AdvancedRISCVTokenizer:
 
     def _build_vocabulary(self):
         idx = 0
-        special = ['<PAD>','<UNK>','<s>','</s>','<dsts>','<srcs>','<csr>','<mem>','</mem>','<addr>','</addr>','<const>',';']
+        # Add <MASK> for MLM training while keeping existing behavior unchanged.
+        # Also add .WORD to cover pseudo-instruction used for illegal-instruction tests.
+        special = [
+            '<PAD>','<UNK>','<s>','</s>','<MASK>',
+            '<dsts>','<srcs>','<csr>','<mem>','</mem>',
+            '<addr>','</addr>','<const>',';','.WORD'
+        ]
         for token in special:
             self.vocab[token] = idx
             idx += 1
